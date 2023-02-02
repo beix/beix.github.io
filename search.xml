@@ -4,17 +4,38 @@
   
     
     <entry>
-      <title>测试</title>
-      <link href="/posts/9daba997.html"/>
-      <url>/posts/9daba997.html</url>
+      <title>bilibili测试</title>
+      <link href="/posts/a37e3c85.html"/>
+      <url>/posts/a37e3c85.html</url>
       
-        <content type="html"><![CDATA[<p>111</p>]]></content>
+        <content type="html"><![CDATA[<div align=center class="aspect-ratio">    <iframe src="https://player.bilibili.com/player.html?aid=474023258&&page=1&as_wide=1&high_quality=1&danmaku=0"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     high_quality=1    danmaku=1     allowfullscreen="true">     </iframe></div>]]></content>
       
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>自托管Git服务</title>
+      <link href="/posts/e12d6302.html"/>
+      <url>/posts/e12d6302.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="自托管的git服务对比"><a href="#自托管的git服务对比" class="headerlink" title="自托管的git服务对比"></a>自托管的git服务对比</h1><p>收集和对比了下一些自托管的git服务, 应该算比较全了; 同样在寻找比较好的方案的同学, 或许可以参考下, 少走一些弯路.</p><h3 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h3><ul><li><a href="https://enterprise.github.com/">GitHub Enterprise</a>: 按年付费，价格较贵(20人以内:$5000/每年)，不提供源代码(只提供整套镜像:VMware的OVA镜像,和AWS的AMI镜像名)，因为是一整套的镜像, 应该不能二次开发(stash没有这些限制).</li><li><a href="https://www.atlassian.com/software/stash">Atlassian Stash</a>: 语言:java, 按网上的评论应该是好于gitlab, 毕竟是收费的. 不需按年付费, 比Enterprise还是算便宜了(10人以内很便宜,只要$10).</li></ul><h3 id="免费"><a href="#免费" class="headerlink" title="免费"></a>免费</h3><ul><li><a href="https://about.gitlab.com/features/#community">gitlab</a>: 语言:ruby, 应该免费的里面功能最完善的, 按官方文档安装容易卡住, 可以用这个<a href="https://bitnami.com/stack/gitlab">一键安装包</a>.</li><li><a href="http://getgitorious.com/">Gitorious</a>: 也是ruby, 也有<a href="https://bitnami.com/stack/gitorious">一键安装包</a>, 评论基本都是安装/使用的体验比gitlab弱一些.</li><li><a href="http://gitprep.org/">gitprep</a>: 语言:Perl, 好像是个人开发的, 官网有demo可以看.</li><li><a href="http://gogs.io/">Gogs</a>: 语言:Go, 感觉不错, 国人开发的, 更新较快(目前,没看到新建分支/pull-request功能). - <a href="https://github.com/takezoe/gitbucket">gitbucket</a>: 语言:Scala, 看界面和功能介绍貌似还不错.</li><li><a href="https://github.com/douban/code">Douban CODE</a>: 语言:Python, github上的代码只提供一些基础功能(据说, 现在没人维护了, 有些可惜).</li></ul><p>Ps: 没发现一个nodejs/php的(还在维护并且功能完善的). 另外, 一些功能比较弱, 不支持权限/hook/pull-request就不在这里列出了.</p><p>gitlab功能的确比较完善, 但是性能太差, 重启服务要等很久. 个人感觉Gogs/gitbucket应该可以尝试下.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> 学习 </tag>
+            <tag> git </tag>
+            
+            <tag> 自托管 </tag>
             
         </tags>
       
@@ -23,17 +44,27 @@
     
     
     <entry>
-      <title>测试</title>
-      <link href="/posts/9daba997.html"/>
-      <url>/posts/9daba997.html</url>
+      <title>webpack</title>
+      <link href="/posts/b9f20a20.html"/>
+      <url>/posts/b9f20a20.html</url>
       
-        <content type="html"><![CDATA[<p>111</p>]]></content>
+        <content type="html"><![CDATA[<h4 id="webpack的作用"><a href="#webpack的作用" class="headerlink" title="webpack的作用"></a>webpack的作用</h4><p>总结为: 打包,优化,编译.<br>打包: 就是可以把模块打包, 处理依赖, 用过requirejs应该很好理解.<br>优化: 比如图片可以转成base64, 可以最大限度减少http请求.<br>编译: 这个很重要, 如果一个旧项目, 页面引入了a.js…n.js, 还在思考用gulp/grunt用最普通的方式把*.js压缩合并到一起, 那么理解起来会有点痛苦, 也发现不了webpack的优势, 最好是先通过一个简单的demo或新项目去理解. 需要某个模块的时候, 只要放心大胆的require就好了(webpack里面任何的静态资源都可以当做模块), 最终代码成什么样子webpack已经替你处理好了.</p><h4 id="webpack的常用配置参数"><a href="#webpack的常用配置参数" class="headerlink" title="webpack的常用配置参数"></a>webpack的常用配置参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">context</span>: __dirname + <span class="string">&#x27;/src&#x27;</span>, <span class="comment">// requre(&#x27;a.js&#x27;)的时候从哪个路径查找</span></span><br><span class="line">    <span class="attr">entry</span>: &#123; <span class="comment">// 打包成2个文件index.js, about.js</span></span><br><span class="line">        <span class="attr">index</span>: [<span class="string">&#x27;./a.js&#x27;</span>, <span class="string">&#x27;./a.css&#x27;</span>, <span class="string">&#x27;./b.js&#x27;</span>, <span class="string">&#x27;./b.css&#x27;</span>], <span class="comment">// css和js打包到一起(一个js文件), 用&lt;style&gt;添加到页面</span></span><br><span class="line">        <span class="attr">about</span>: [<span class="string">&#x27;./a.js&#x27;</span>, <span class="string">&#x27;./a.css&#x27;</span>, <span class="string">&#x27;./c.js&#x27;</span>, <span class="string">&#x27;./c.css&#x27;</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">output</span>: &#123; <span class="comment">// 打包后的输出目录</span></span><br><span class="line">        <span class="attr">path</span>: <span class="string">&#x27;./build&#x27;</span>, <span class="comment">// 打包后的文件路径</span></span><br><span class="line">        <span class="attr">publicPath</span>: <span class="string">&#x27;build/&#x27;</span>, <span class="comment">// 打包文件内用到的URL路径, 比如背景图等(可以设成http的地址, 比如: http://cdn.my.com)</span></span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;[name].js&#x27;</span> <span class="comment">// 打包后生成文件的命名规则, 这里是: index.js, about.js</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">externals</span>: &#123; <span class="comment">// 遇到require这些时, 不需要再编译. 适合那些常用的库, 已经在页面通过&lt;script&gt;引入了, 就无需都打包到一起了 </span></span><br><span class="line">        <span class="attr">jquery</span>: <span class="string">&#x27;jQuery&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">module</span>: &#123;</span><br><span class="line">        <span class="attr">loaders</span>: [</span><br><span class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">&#x27;style-loader!css-loader&#x27;</span> &#125;, <span class="comment">// 针对.css文件用2个加载器预处理(!号隔开多个加载器)</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h4 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 同步加载一个模块(像不像nodejs?)</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">&#x27;./a.js&#x27;</span>);</span><br><span class="line">a.<span class="title function_">show</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 异步按需加载模块(像不像requrejs?)</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;./a.js&#x27;</span>], <span class="keyword">function</span>(<span class="params"><span class="variable language_">module</span></span>)&#123;</span><br><span class="line">    <span class="variable language_">module</span>.<span class="title function_">show</span>();</span><br><span class="line">    <span class="keyword">var</span> c = <span class="built_in">require</span>(<span class="string">&#x27;./c.js&#x27;</span>).<span class="title function_">show</span>(); <span class="comment">// webpack的优化: 最终c.js会和a.js打包成一个模块</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><p>可以看到, 无论AMD/CMD标准的代码webpack都可以支持. 模块依赖/互相调用的问题, 轻松就解决了, 不需要自己开发或或引用第三方模块加载器了.</p><p>上面提到, 任何资源都可以作为模块, 图片/html/json等, 都是可以require的, 只要配置好webpack配置的loaders里面的规则就OK了.</p><h4 id="优化打包"><a href="#优化打包" class="headerlink" title="优化打包"></a>优化打包</h4><p>什么时候css不打包成JS, 让css也打包成独立的css文件?<br>打包后的文件名想用带哈希的文件名, 避免缓存?<br>所有的页面都引用了common.js, lib.js, 希望最终打包的时候, 自动把公共的代码打包成一个独立的common.js?<br>base64后, 图片的确减少了请求, 但是大图base64得到的字符串太长, 只希望小图片才转base64?<br>这些都可以做到, 下面的PPT里面有写. 同时还有autoprefixer的介绍, scss/less/图片加载的例子, 通过css-sprite优化sprite.<br>还有, debug的代码上线时, 不需要手动注释, 可以让webpack自动移除.</p><h4 id="旧项目如何改造"><a href="#旧项目如何改造" class="headerlink" title="旧项目如何改造"></a>旧项目如何改造</h4><p>AMD/CMD什么的还是要改造旧代码, 旧项目很多lib都是注册变量到window对象下面的, 怎么解?<br>webpack提供Shim支持, 因为加载模块的逻辑都是loader来处理规则的, 所以imports,exports,expose这三个loader完全可以搞定旧lib.</p><h4 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h4><p>启动webpack-dev-server后, 本地调试代码时, 页面只需引入<code>&lt;script src=&quot;http://localhost:8080/webpack-dev-server.js&quot;&gt;&lt;/script&gt;</code>, 在改版静态资源经过webpack编译好后, 页面会自动更新.</p><h4 id="和gulp结合使用"><a href="#和gulp结合使用" class="headerlink" title="和gulp结合使用"></a>和gulp结合使用</h4><p>webpack和gulp并不是敌人, 他们可以搭配使用, 只是我们的惯性思维, 还是停留在用gulp去做打包的动作. 当然单独用webpack基本大部分项目已经足够, 如果项目复杂, 任务较多, 或者需要使用不同的webpack实例, 那么他们结合起来用是没有任何问题的. gulp只负责好任务就OK了.</p><h4 id="links"><a href="#links" class="headerlink" title="links"></a>links</h4><ol><li><a href="https://github.com/kairyou/demo">demo</a>, 包括了webpack/gulp/css-sprite各自的例子以及组合使用的例子.</li><li><a href="http://kairyou.github.io/webpack.html">webpack介绍PPT</a>, 快一年了, 带批判性的看吧.</li></ol>]]></content>
       
+      
+      <categories>
+          
+          <category> webpack </category>
+          
+          <category> npm </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> 教程 </tag>
+            <tag> webpack </tag>
+            
+            <tag> 资源 </tag>
             
         </tags>
       
@@ -42,36 +73,27 @@
     
     
     <entry>
-      <title>测试</title>
-      <link href="/posts/9daba997.html"/>
-      <url>/posts/9daba997.html</url>
+      <title>CDN加速</title>
+      <link href="/posts/b5412fe9.html"/>
+      <url>/posts/b5412fe9.html</url>
       
-        <content type="html"><![CDATA[<p>111</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="1、CDNJS-开源-JS-库"><a href="#1、CDNJS-开源-JS-库" class="headerlink" title="1、CDNJS 开源 JS 库"></a>1、CDNJS 开源 JS 库</h3><p>我们采用的方法是每天定时同步 CDNJS 的 <a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9naXRodWIuY29tL2NkbmpzL2Nkbmpz">Github</a></p><p>所有的 JS/CSS 库可以在这儿找到您需要的链接<a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9jZG5qcy5sb2xpLm5ldC9hamF4L2xpYnMv">https://cdnjs.loli.net/ajax/libs/</a></p><p>如果您使用 <a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9jZG5qcy5jb20v">cdnjs.com</a> 只需要替换 <code>cdnjs.cloudflare.com</code> 为 <code>cdnjs.loli.net</code> 即可，如</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>替换成</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p>CDNJS 的 API 开发文档请摸<a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9jZG5qcy5jb20vYXBp">这里</a></p><h3 id="2、Google-Fonts"><a href="#2、Google-Fonts" class="headerlink" title="2、Google Fonts"></a>2、Google Fonts</h3><p>我们采用的方法是万能的 Nginx 反代 + 关键词替换</p><p>使用的时候，您只需要替换 <code>fonts.googleapis.com</code> 为 <code>fonts.loli.net</code> 即可，如</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&#x27;https://fonts.googleapis.com/css?family=Open+Sans&#x27;</span> <span class="attr">rel</span>=<span class="string">&#x27;stylesheet&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>替换成</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&#x27;https://fonts.loli.net/css?family=Open+Sans&#x27;</span> <span class="attr">rel</span>=<span class="string">&#x27;stylesheet&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>如果需要 <a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9tYXRlcmlhbC5pby9pY29ucy8%3D">Material icons</a> ，把</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&#x27;https://fonts.googleapis.com/icon?family=Material+Icons&#x27;</span> <span class="attr">rel</span>=<span class="string">&#x27;stylesheet&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>替换成</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&#x27;https://fonts.loli.net/icon?family=Material+Icons&#x27;</span> <span class="attr">rel</span>=<span class="string">&#x27;stylesheet&#x27;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>如果需要 <a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9mb250cy5nb29nbGUuY29tL2Vhcmx5YWNjZXNz">Early Access</a>，把</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(https://fonts.googleapis.com/earlyaccess/notosanskannada.css);</span><br></pre></td></tr></table></figure><p>替换成</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(https://fonts.loli.net/earlyaccess/notosanskannada.css);</span><br></pre></td></tr></table></figure><p>如果需要下载单个字体，您只需要把 <code>fonts.gstatic.com</code> 替换成 <code>gstatic.loli.net</code> 或 <code>themes.googleusercontent.com</code> 替换成 <code>themes.loli.net</code> 即可</p><p>比如</p><p><a href="https://fonts.gstatic.com/s/opensans/v14/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2">https://fonts.gstatic.com/s/opensans/v14/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2</a></p><p>替换成</p><p><a href="https://gstatic.loli.net/s/opensans/v14/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2">https://gstatic.loli.net/s/opensans/v14/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2</a></p><p>或者</p><p><a href="https://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E-V_5zh5b-_HiooIRUBwn1A.ttf">https://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E-V_5zh5b-_HiooIRUBwn1A.ttf</a></p><p>替换成</p><p><a href="https://themes.loli.net/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E-V_5zh5b-_HiooIRUBwn1A.ttf">https://themes.loli.net/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E-V_5zh5b-_HiooIRUBwn1A.ttf</a></p><p>Google Fonts 的 API 文档请摸<a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vZm9udHMvZG9jcy9nZXR0aW5nX3N0YXJ0ZWQ%3D">这里</a></p><h3 id="3、Google-前端公共库"><a href="#3、Google-前端公共库" class="headerlink" title="3、Google 前端公共库"></a>3、Google 前端公共库</h3><p>方法同上，直接替换 <code>ajax.googleapis.com</code> 为 <code>ajax.loli.net</code> 即可，如</p><script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><p>替换成</p><script type='text/javascript' src='https://ajax.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js'></script><p>Google 前端库 API 开发文档摸<a href="https://www.iowen.cn/go/?url=aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc3BlZWQvbGlicmFyaWVzLw%3D%3D">这儿</a></p><h3 id="4、Gravatar-头像"><a href="#4、Gravatar-头像" class="headerlink" title="4、Gravatar 头像"></a>4、Gravatar 头像</h3><p>方法还是同上，直接替换 <code>*.gravatar.com</code> 为 <code>gravatar.loli.net</code> 即可，如</p><p><a href="https://secure.gravatar.com/avatar/8406d089bc81b664a2610b8d214c1428">https://secure.gravatar.com/avatar/8406d089bc81b664a2610b8d214c1428</a></p><p>替换成</p><p><a href="https://gravatar.loli.net/avatar/8406d089bc81b664a2610b8d214c1428">https://gravatar.loli.net/avatar/8406d089bc81b664a2610b8d214c1428</a></p><p>html65 Bytes</p><h1 id="npm包-CDN-收集"><a href="#npm包-CDN-收集" class="headerlink" title="npm包 CDN 收集"></a><a href="https://xhl.me/archives/npm-cdn/">npm包 CDN 收集</a></h1><h5 id="jsDelivr-支持-combine"><a href="#jsDelivr-支持-combine" class="headerlink" title="jsDelivr(支持 combine)"></a>jsDelivr(支持 combine)</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`https://cdn.jsdelivr.net/npm/:package@:version/:file`</span><br><span class="line"># https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js</span><br></pre></td></tr></table></figure><h5 id="unpkg"><a href="#unpkg" class="headerlink" title="unpkg"></a>unpkg</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`https://unpkg.com/:package@:version/:file`</span><br><span class="line"># https://unpkg.com/jquery@3.6.0/dist/jquery.min.js</span><br></pre></td></tr></table></figure><h5 id="饿了么"><a href="#饿了么" class="headerlink" title="饿了么"></a>饿了么</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`https://npm.elemecdn.com/:package@:version/:file`</span><br><span class="line"># https://npm.elemecdn.com/jquery@3.6.0/dist/jquery.min.js</span><br></pre></td></tr></table></figure><h5 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a>知乎</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`https://unpkg.zhimg.com/:package@:version/:file`</span><br><span class="line"># https://unpkg.zhimg.com/jquery@3.6.0/dist/jquery.min.js</span><br></pre></td></tr></table></figure><h5 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`https://code.bdstatic.com/npm/:package@:version/:file`</span><br><span class="line"># https://code.bdstatic.com/npm/jquery@3.6.0/dist/jquery.min.js</span><br></pre></td></tr></table></figure><p>jsDelivr国内可能部分网络有问题, 但仅jsDelivr才支持combine(多个文件合并).<br>使用CDN引入, 可以独立公共资源, 省去webpack打包. 当然, 也有人用来做图床.</p><ul><li><h3 id="免费静态资源CDN整理"><a href="#免费静态资源CDN整理" class="headerlink" title="免费静态资源CDN整理"></a><a href="https://xhl.me/archives/static-cdn/">免费静态资源CDN整理</a></h3><p>发布时间: 2016-04-18 / 分类: <a href="https://xhl.me/category/dev/">开发</a> / <a href="https://xhl.me/archives/static-cdn/#comments">No Comments</a></p><h4 id="资源多-比较靠谱的CDN"><a href="#资源多-比较靠谱的CDN" class="headerlink" title="资源多, 比较靠谱的CDN:"></a>资源多, 比较靠谱的CDN:</h4><ul><li>www.bootcdn.cn:<br>更新快, 用的又拍云</li></ul><p>例子: //cdn.bootcss.com/react/15.1.0/react.min.js</p><ul><li>www.jsdelivr.com:<br>支持请求合并, 貌似有中国节点: <a href="http://git.io/vrfDQ">http://git.io/vrfDQ</a></li></ul><p>例子: //cdn.jsdelivr.net/g/react@15.1.0(react.min.js+react-dom.min.js)<br>或: //cdn.jsdelivr.net/combine/url1,url2,url3</p><ul><li>cdnjs.com:<br>国内访问较慢, 例子: //cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js</li><li>unpkg.com:<br>也使用的cloudflare的cnd, 更新快, react官方文档cdn部分也写的这个.</li></ul><h4 id="资源少或更新慢大厂cdn"><a href="#资源少或更新慢大厂cdn" class="headerlink" title="资源少或更新慢大厂cdn:"></a>资源少或更新慢大厂cdn:</h4><ul><li>google: <a href="https://developers.google.com/speed/libraries/">https://developers.google.com/speed/libraries/</a> (国内项目没法用)</li><li>microsoft: <a href="http://www.asp.net/ajax/cdn">http://www.asp.net/ajax/cdn</a></li><li>baidu: <a href="http://cdn.code.baidu.com/">http://cdn.code.baidu.com/</a></li><li>sina: <a href="http://lib.sinaapp.com/">http://lib.sinaapp.com/</a></li><li>360: <del>libs.useso.com</del>已经停止服务, 奇舞团增加了: <a href="https://cdn.baomitu.com/">https://cdn.baomitu.com</a></li><li>upai: <a href="http://jscdn.upai.com/">http://jscdn.upai.com/</a></li><li>qiniu: <a href="http://www.staticfile.org/">http://www.staticfile.org/</a> (不支持https, 更新/处理问题都比较慢)</li></ul><h4 id="如何选择靠谱的"><a href="#如何选择靠谱的" class="headerlink" title="如何选择靠谱的"></a>如何选择靠谱的</h4><ul><li>国内项目: 貌似只能选bootcdn了(未使用较新js库的项目也可以选择大厂cdn). 非常可悲, 同步更新cdnjs的国内CDN, 没一个大厂能提供<br>国外项目: jsdelivr/unpkg.com/cdnjs.com</li></ul><p>测试靠谱程度, 可以用下面几个地址测试下:<br><a href="http://ce.cloud.360.cn/">http://ce.cloud.360.cn/</a><br><a href="http://www.17ce.com/">http://www.17ce.com/</a><br><a href="http://tool.chinaz.com/speedtest.aspx">http://tool.chinaz.com/speedtest.aspx</a></p><ul><li>使用多个CDN(防止某个CND挂掉):</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 拿jQuery举例(cdn1挂掉, 使用cdn2)</span></span><br><span class="line">&lt;script src=<span class="string">&quot;//cdn1.com/jquery.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"><span class="variable language_">window</span>.<span class="property">jQuery</span> || <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&lt;script src=//cdn2.com/jquery.min.js&gt;&lt;\/script&gt;&#x27;</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
       
       
-      
-        <tags>
-            
-            <tag> 游戏测评 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试</title>
-      <link href="/posts/9daba997.html"/>
-      <url>/posts/9daba997.html</url>
-      
-        <content type="html"><![CDATA[<p>111</p>]]></content>
-      
+      <categories>
+          
+          <category> 资源 </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> 教程 </tag>
+            <tag> CDN </tag>
+            
+            <tag> 开源 </tag>
+            
+            <tag> nmp </tag>
             
         </tags>
       

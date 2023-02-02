@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /**
-   * 滾動處理
+   * 滚动处理
    */
   const scrollFn = function () {
     const $rightside = document.getElementById('rightside')
@@ -776,3 +776,5 @@ document.addEventListener('DOMContentLoaded', function () {
   refreshFn()
   unRefreshFn()
 })
+
+
