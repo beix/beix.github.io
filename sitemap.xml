@@ -110,15 +110,6 @@
   </url>
   
   <url>
-    <loc>https://a.beixl.top/box/animation/index.html</loc>
-    
-    <lastmod>2023-03-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://a.beixl.top/tags/index.html</loc>
     
     <lastmod>2023-03-07</lastmod>
@@ -129,6 +120,15 @@
   
   <url>
     <loc>https://a.beixl.top/box/nav/index.html</loc>
+    
+    <lastmod>2023-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://a.beixl.top/box/animation/index.html</loc>
     
     <lastmod>2023-03-07</lastmod>
     
