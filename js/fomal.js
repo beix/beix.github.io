@@ -2812,9 +2812,9 @@ function createtime() {
     (document.getElementById("workboard").innerHTML = currentTimeHtml);
 }
 // 设置重复执行函数，周期1000ms
-setInterval(() => {
-  createtime();
-}, 1000);
+// setInterval(() => {
+  // createtime();
+// }, 1000);
 
 /*页脚计时器 end */
 

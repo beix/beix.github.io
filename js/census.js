@@ -1,7 +1,6 @@
 var start_date = '20230101' // 开始日期
 var date = new Date();
 var end_date = '' + date.getFullYear() + (date.getMonth() > 8 ? (date.getMonth() + 1) : ("0" + (date.getMonth() + 1))) + (date.getDate() > 9 ? date.getDate() : ("0" + date.getDate())); // 结束日期
-
 var access_token = '121.084ca13dabc3b9f785553aeed17b1fd8.YnqsrPxMYA8hA6ORY8wJN7t-2TFzDPZQW1LRO-8.OHGY7A' // accessToken
 var site_id = '18910904' // 网址 id
 var dataUrl = 'https://baidu-tongji.beixl.top/api?access_token=' + access_token + '&site_id=' + site_id

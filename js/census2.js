@@ -10,7 +10,7 @@ var metricsName = (metrics === 'pv_count' ? '访问次数' : (metrics === 'visit
 var color = document.documentElement.getAttribute('data-theme') === 'light' ? '#4c4948' : 'rgba(255,255,255,0.7)'
 
 // 访问地图
-function mapChart () {
+function mapChart() {
   let script = document.createElement("script")
   // let paramUrl = '&start_date=' + start_date + '&end_date=' + end_date + '&metrics=' + metrics + '&method=visit/district/a'; // 更换请求地址
   let paramUrl = '&start_date=' + start_date + '&end_date=' + end_date + '&metrics=' + metrics + '&method=overview/getDistrictRpt';
