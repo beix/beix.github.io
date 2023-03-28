@@ -1,0 +1,588 @@
+/* anzhiyu */
+
+
+/* 音乐播放器 */
+
+.aplayer.aplayer-narrow .aplayer-body,
+.aplayer.aplayer-narrow .aplayer-pic {
+  height: 66px;
+  width: 66px;
+}
+
+#page:has(.aplayer):has(.aplayer-body):has(.aplayer-list) #post-comment .tk-comments-container > .tk-comment {
+  border: none;
+  box-shadow: none;
+}
+
+/* 导航栏音乐 */
+@media screen and (max-width: 1300px) {
+  #nav-music {
+    display: none !important;
+  }
+}
+
+#nav-music {
+  display: flex;
+  align-items: center;
+  z-index: 9;
+  position: fixed;
+  bottom: 115px;
+  left: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  transform-origin: left bottom;
+  box-shadow: var(--anzhiyu-shadow-border);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+#nav-music:active {
+  transform: scale(0.97);
+}
+
+#nav-music.playing {
+  box-shadow: 0 0px 12px -3px var(--anzhiyu-none);
+  animation: playingShadow 5s linear infinite;
+}
+
+@keyframes playingShadow {
+  0% {
+    box-shadow: 0 0px 12px -3px var(--anzhiyu-none);
+  }
+
+  50% {
+    box-shadow: 0 0px 12px 0px var(--anzhiyu-main);
+  }
+
+  100% {
+    box-shadow: 0 0px 12px -3px var(--anzhiyu-none);
+  }
+}
+
+#nav-music .aplayer.aplayer-withlrc .aplayer-pic {
+  height: 25px;
+  width: 25px;
+  border-radius: 40px;
+  z-index: 1;
+  transition: 0.3s;
+  transform: rotate(0deg) scale(1);
+  border: var(--style-border-always);
+  animation: changeright 24s linear infinite;
+  animation-play-state: paused;
+}
+
+#nav-music.playing .aplayer.aplayer-withlrc .aplayer-pic {
+  box-shadow: 0 0 14px #ffffffa6;
+  transform: rotate(0deg) scale(1.1);
+  border-color: var(--anzhiyu-white);
+  animation-play-state: running;
+}
+
+@keyframes changeright {
+  0% {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 0 0 2px #ffffff00;
+  }
+
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 0 14px #ffffff;
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 0 2px #ffffff00;
+  }
+
+  75% {
+    transform: rotate(270deg) scale(1.1);
+    box-shadow: 0 0 14px #ffffff;
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 0 2px #ffffff00;
+  }
+}
+
+#nav-music .aplayer.aplayer-withlrc .aplayer-info {
+  height: 100%;
+  color: var(--anzhiyu-fontcolor);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#nav-music.playing .aplayer.aplayer-withlrc .aplayer-info {
+  color: var(--anzhiyu-white);
+}
+
+#nav-music.playing #nav-music-hoverTips {
+  width: 0;
+  opacity: 0;
+}
+#nav-music #nav-music-hoverTips {
+  color: var(--anzhiyu-white);
+  background: var(--anzhiyu-main);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 40px;
+  opacity: 0;
+  font-size: 12px;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+#nav-music:hover:not(.playing) #nav-music-hoverTips {
+  opacity: 1;
+}
+
+#nav-music
+  .aplayer
+  .aplayer-info
+  .aplayer-controller
+  .aplayer-bar-wrap:hover
+  .aplayer-bar
+  .aplayer-played
+  .aplayer-thumb {
+  display: none;
+}
+
+#nav-music .aplayer {
+  background: var(--card-bg);
+  border-radius: 60px;
+  height: 41px;
+  display: flex;
+  margin: 0;
+  transition: 0.3s;
+  border: var(--style-border);
+  box-shadow: none;
+}
+
+#nav-music.playing .aplayer {
+  background: var(--anzhiyu-main-op-deep);
+  border: var(--style-border-hover);
+  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+#nav-music .aplayer .aplayer-notice {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-miniswitcher {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-body {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#nav-music .aplayer-list {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-music {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 12px 0 8px;
+  cursor: pointer;
+  z-index: 1;
+  height: 100%;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-time {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-music .aplayer-author {
+  display: none;
+}
+
+#nav-music .aplayer.aplayer-withlist .aplayer-info {
+  border: none;
+}
+
+#nav-music .aplayer .aplayer-pic .aplayer-button {
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  margin: 0;
+  transition: 0.3s;
+}
+#nav-music .aplayer .aplayer-pic:has(.aplayer-button.aplayer-play) {
+  animation-play-state: paused;
+  transform: rotate(0deg) scale(1) !important;
+}
+#nav-music .aplayer.aplayer-withlrc .aplayer-pic {
+  margin-left: 8px;
+}
+#nav-music .aplayer .aplayer-info .aplayer-music .aplayer-title {
+  cursor: pointer;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: 0.3s;
+  user-select: none;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
+  margin: 0;
+  padding: 0;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+  height: 100%;
+  background: none;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  height: 100%;
+  opacity: 0.1;
+  background-color: var(--anzhiyu-white) !important;
+  animation: lightBar 5s ease infinite;
+  animation-play-state: paused;
+}
+
+#nav-music.playing .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
+  animation-play-state: running;
+}
+
+@keyframes lightBar {
+  0% {
+    opacity: 0.1;
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.1;
+  }
+}
+
+/* 歌词 */
+#nav-music .aplayer.aplayer-withlrc .aplayer-lrc {
+  width: 0;
+  opacity: 0;
+  transition: 0.3s;
+  margin-top: -2px;
+  padding: 5px 0;
+}
+#nav-music.stretch .aplayer.aplayer-withlrc .aplayer-lrc {
+  margin-left: 8px;
+}
+#nav-music.stretch .aplayer.aplayer-withlrc .aplayer-lrc {
+  width: 200px;
+  margin-bottom: 0;
+  opacity: 1;
+}
+
+#nav-music .aplayer .aplayer-lrc p.aplayer-lrc-current {
+  color: var(--anzhiyu-white);
+  border: none;
+}
+
+#nav-music .aplayer .aplayer-lrc:after,
+#nav-music .aplayer .aplayer-lrc:before {
+  display: none;
+}
+
+#nav-music .aplayer .aplayer-lrc p {
+  color: #ffffffb3;
+}
+
+#nav-music .aplayer .aplayer-pic {
+  pointer-events: none;
+}
+#nav-music .aplayer .aplayer-pic .aplayer-button {
+  pointer-events: all;
+}
+/* end */
+
+
+
+
+
+
+/* .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body { */
+  /* left: -66px !important; */
+  /* /* 默认情况下缩进左侧66px，只留一点箭头部分 */ */
+/* } */
+
+/* .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover { */
+  /* left: 0 !important; */
+  /* /* 鼠标悬停是左侧缩进归零，完全显示按钮 */ */
+/* } */
+
+/* https://www.chuckle.top/article/fab5c3df.html */
+
+.contact-info{
+    position: fixed;
+    top: 22%;
+    z-index: 200;
+    left: -51px;
+    transition: 0.4s;
+}
+.contact-info:hover{
+left: 0px;
+}
+.contact-info .option{
+cursor: pointer;
+position: relative;
+}
+  
+.contact-info .option i{
+display: block;
+width: 50px;
+text-align: center;
+height: 60px;
+line-height: 60px;
+background: rgb(255, 255, 255);
+color: #b9b9b9;
+font-size: 20px;
+transition: 0.4s;
+border-radius: 0 10px 10px 0;
+}
+
+.contact-info .option:hover i{
+color: #3498db;
+}
+.contact-info .text{
+border-radius: 15px;
+position: absolute;
+height: 60px;
+width: 200px;
+background: rgba(255,255,255,.85);
+top: 0;
+z-index: -1;
+left: -136px;
+color: rgb(0, 0, 0);
+line-height: 60px;
+text-align: center;
+transition: 0.4s;
+}
+/* .contact-info .aplayertext{ */
+/* transition: none!important; */
+/* } */
+/* .aplayer{ */
+/* position: absolute!important; */
+/* } */
+/* .aplayer.aplayer-fixed .aplayer-body{ */
+/* left: -60px; */
+/* position: absolute!important; */
+/* width: 370px!important; */
+/* transition: none!important; */
+/* border-radius: 10px!important; */
+/* } */
+/* .aplayer.aplayer-fixed{ */
+/* left: -300px!important; */
+/* } */
+/* .contact-info .option:hover .aplayer.aplayer-fixed .aplayer-body,.contact-info .option:hover .aplayer.aplayer-fixed{ */
+/* left: 0px!important; */
+/* } */
+.contact-info .option:hover .text{
+left: 60px;
+}
+.contact-info .blok{
+position: absolute;
+height: 60px;
+width: 100px;
+top: 0;
+z-index: -1;
+left: 0px;
+}
+.contact-info .bloktop{
+position: absolute;
+height: 75px;
+width: 100px;
+bottom: 0px;
+z-index: -1;
+left: 0px;
+}
+.contact-info .blokbottom{
+position: absolute;
+height: 75px;
+width: 100px;
+top: 0;
+z-index: -1;
+left: 0px;
+}
+.contact-info .option:hover .blok,.contact-info .option:hover .bloktop,.contact-info .option:hover .blokbottom{
+left: 0px;
+}
+.contact-info .option:hover .aplayertext{
+left: 60px!important;
+width: 370px!important;
+background: transparent!important;
+}
+/* .aplayer.aplayer-fixed .aplayer-miniswitcher{ */
+/* border-radius: 0 10px 10px 0!important; */
+/* } */
+/* .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body{ */
+/* transition: 0.28s!important; */
+/* border-radius: 10px!important; */
+/* } */
+/* .aplayer .aplayer-pic{ */
+/* height: 60px!important; */
+/* } */
+/* .aplayer .aplayer-info{ */
+/* height: 60px!important; */
+/* } */
+/* .aplayer.aplayer-narrow .aplayer-body{ */
+/* height: 60px; */
+/* } */
+/* .aplayer .aplayer-list.aplayer-list-hide{ */
+/* margin-bottom: 59px!important; */
+/* } */
+/* .aplayer.aplayer-fixed .aplayer-list{ */
+/* margin-bottom: 62px!important; */
+/* max-height: 240px!important; */
+/* } */
+/* .aplayer.aplayer-fixed .aplayer-info{ */
+/* transition: none!important; */
+/* } */
+/* .aplayer.aplayer-narrow .aplayer-body{ */
+/* height: 60px!important; */
+/* } */
+/* .aplayer.aplayer-narrow .aplayer-body, .aplayer.aplayer-narrow .aplayer-pic{ */
+/* border-radius:  10px 0 0 10px!important; */
+/* } */
+/* .aplayer.aplayer-fixed{ */
+/* border-radius: 10px!important; */
+/* } */
+/* .aplayer .aplayer-pic{ */
+/* border-radius:  0 0 0 10px!important; */
+/* } */
+/* .aplayer.aplayer-fixed .aplayer-list{ */
+/* border-radius: 10px 10px 0 0!important; */
+/* } */
+/* .aplayer .aplayer-list ol li{ */
+  /* /* 列表向左靠齐 */ */
+/* text-align: left; */
+/* } */
+
+[data-theme=dark]
+.contact-info .option i{
+background: rgb(22, 22, 22);
+color: #b9b9b9;
+}
+[data-theme=dark]
+.contact-info .text{
+background: rgba(23, 23, 23, 0.85);
+color: rgba(255, 255, 255, 0.92);
+}
+@media screen and (max-width:1300px){
+.contact-info{
+	display: none!important;
+  }
+}
+/* .aplayer{ */
+/* opacity: .93!important; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer{ */
+/* background: rgb(22, 22, 22)!important; */
+/* color: rgb(255, 255, 255); */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer.aplayer-fixed .aplayer-body{ */
+/* background: rgb(22, 22, 22)!important; */
+/* color: rgb(255, 255, 255); */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-list ol li:hover{ */
+/* background: #3b3b3b; */
+/* } */
+
+/* [data-theme=dark] */
+/* .aplayer .aplayer-list ol li.aplayer-list-light{ */
+/* background: #686868; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-info .aplayer-controller .aplayer-time{ */
+/* color: #d4d4d4; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-list ol li .aplayer-list-index{ */
+/* color: #d4d4d4; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-list ol li .aplayer-list-author{ */
+/* color: #d4d4d4; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path{ */
+/* fill: #d4d4d4; */
+/* } */
+
+.contact-info .text .strip{
+border-radius: 5px;
+position: absolute;
+height: 36px;
+width: 5px;
+background: rgba(20, 163, 230, 0.8);
+top: 12px;
+z-index: -1;
+right: 4px;
+transition: 0.4s;
+}
+/* .aplayertext .strip{ */
+/* transition: none!important; */
+/* } */
+/* .contact-info .option:hover .aplayertext .strip{ */
+/* background: transparent; */
+/* } */
+/* [data-theme=dark] */
+/* .aplayer .aplayer-miniswitcher{ */
+/* background: rgba(23, 23, 23, 0.85); */
+/* } */
+/* .aplayer .aplayer-miniswitcher .aplayer-icon:hover path{ */
+/* fill: #3498db; */
+/* } */
+[data-theme=dark]
+.contact-info .option:hover i{
+color: #3498db;
+}
+.contact-info .option .text .post-reward .tip-button__text{
+  margin: 25px!important;
+}
+.post-reward .reward-button .reward-main .reward-all{
+  border-radius: 12px!important;
+}
+.contact-info .option .text .post-reward .reward-button .reward-main .reward-all{
+  z-index: 999!important;
+}
+[data-theme="dark"]
+.contact-info .option .text .post-reward .tip-button{
+  border: solid 2px rgba(236, 233, 233, 0.8);
+  background: #043749d0;
+}
+
+
